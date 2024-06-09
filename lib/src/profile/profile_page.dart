@@ -5,7 +5,8 @@ import '../auth/domain/auth_state.dart';
 import '../common/widgets/loading.dart';
 
 class ProfilePage extends StatelessWidget {
-  static const String path = '/profile';
+  static const String path = 'profile';
+  static const String route = '/profile';
 
   final AuthService authService;
 

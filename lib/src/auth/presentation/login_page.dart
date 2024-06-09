@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../common/widgets/loading.dart';
+import '../../home/home_page.dart';
 import '../domain/auth_service.dart';
 import '../domain/auth_state.dart';
 
@@ -99,6 +101,12 @@ class _LoginPageState extends State<LoginPage> {
             content: Text('Please, verify your email and password'),
           ),
         );
+      }
+    }
+
+    if (widget.authService.authState == AuthState.emailNotVerified) {
+      if (mounted) {
+        context.go(HomePage.path);
       }
     }
   }

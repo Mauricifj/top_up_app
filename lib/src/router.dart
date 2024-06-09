@@ -4,14 +4,13 @@ import 'package:go_router/go_router.dart';
 import 'auth/domain/auth_service.dart';
 import 'auth/presentation/login_page.dart';
 import 'dependency_injection.dart';
+import 'home/home_page.dart';
 import 'profile/profile_page.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: LoginPage.path,
   redirect: (context, state) {
-    return serviceLocator<AuthService>().user == null
-        ? LoginPage.path
-        : ProfilePage.path;
+    return serviceLocator<AuthService>().user == null ? LoginPage.path : null;
   },
   refreshListenable: serviceLocator<AuthService>(),
   routes: <RouteBase>[
@@ -24,8 +23,14 @@ final GoRouter router = GoRouter(
       },
     ),
     GoRoute(
+      path: HomePage.path,
+      builder: (context, state) {
+        return const HomePage();
+      },
+      routes: [
+    GoRoute(
       path: ProfilePage.path,
-      builder: (BuildContext context, GoRouterState state) {
+          builder: (context, state) {
         return ProfilePage(
           authService: serviceLocator<AuthService>(),
         );
