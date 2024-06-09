@@ -73,7 +73,7 @@ class ProfilePage extends StatelessWidget {
     return ListenableBuilder(
       listenable: authService,
       builder: (context, _) {
-        final isLoading = authService.authState == AuthState.loggingIn;
+        final isLoading = authService.authState == AuthState.loggingOut;
 
         return isLoading
             ? const Padding(
