@@ -4,8 +4,8 @@ import '../auth/domain/auth_service.dart';
 import '../bank_account/domain/account_service.dart';
 import '../bank_account/presentation/widgets/account_services_widget.dart';
 import '../bank_account/presentation/widgets/balance_wdiget.dart';
-import 'widgets/greeting_widget.dart';
 import '../bank_account/presentation/widgets/transactions_widget.dart';
+import 'widgets/greeting_widget.dart';
 
 class HomePage extends StatelessWidget {
   static const String path = '/';

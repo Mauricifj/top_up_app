@@ -6,7 +6,7 @@ import '../common/widgets/loading.dart';
 
 class ProfilePage extends StatelessWidget {
   static const String path = 'profile';
-  static const String route = '/profile';
+  static const String route = '/$path';
 
   final AuthService authService;
 

@@ -73,7 +73,11 @@ class AccountServiceImpl extends ChangeNotifier implements AccountService {
     await Future.delayed(const Duration(seconds: 1));
 
     _balance -= amount;
-    _addTransaction(amount, TransactionType.withdrawal);
+    _addTransaction(
+      amount,
+      TransactionType.withdrawal,
+      description: description,
+    );
 
     _transactionState = const TransactionCompleted();
     notifyListeners();

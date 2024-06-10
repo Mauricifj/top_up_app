@@ -36,7 +36,7 @@ class TransactionsWidget extends StatelessWidget {
                   color: Colors.red,
                 ),
           title: Text(
-            transaction.type.displayName,
+            transaction.description,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               decoration:

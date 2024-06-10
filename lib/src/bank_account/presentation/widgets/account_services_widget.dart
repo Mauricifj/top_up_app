@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../top_up/presentation/top_ups_page.dart';
 import '../transaction_page.dart';
 import 'account_service_button.dart';
 
@@ -35,7 +36,7 @@ class AccountServicesWidget extends StatelessWidget {
             title: 'Top Up',
             icon: Icons.mobile_friendly,
             onPressed: () {
-              _showFeatureNotImplementedSnackBar(context);
+              context.go(TopUpsPage.route);
             },
           ),
           const SizedBox(width: 10),
